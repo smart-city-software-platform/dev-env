@@ -1,3 +1,12 @@
 [submodule "data-collector"]
 	path = data-collector
 	url = git@gitlab.com:smart-city-software-platform/data-collector.git
+[submodule "resource-cataloguer"]
+	path = resource-cataloguer
+	url = git@gitlab.com:smart-city-software-platform/resource-cataloguer.git
+[submodule "resource-adaptor"]
+	path = resource-adaptor
+	url = git@gitlab.com:smart-city-software-platform/resource-adaptor.git
+[submodule "resource-viewer"]
+	path = resource-viewer
+	url = git@gitlab.com:smart-city-software-platform/resource-viewer.git
