@@ -1,0 +1,3 @@
+[submodule "data-collector"]
+	path = data-collector
+	url = git@gitlab.com:smart-city-software-platform/data-collector.git
