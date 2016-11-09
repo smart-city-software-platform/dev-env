@@ -10,3 +10,6 @@
 [submodule "resource-viewer"]
 	path = resource-viewer
 	url = git@gitlab.com:smart-city-software-platform/resource-viewer.git
+[submodule "external-resources"]
+	path = external-resources
+	url = git@gitlab.com:smart-city-software-platform/external-resources.git
