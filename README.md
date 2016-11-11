@@ -2,8 +2,15 @@
 
 * Clone the repository
 * Init submodules:
-  `git sumodule init`
+  `git submodule init`
 * Update submodules:
-  `git sumodule update`
+  `git submodule update`
+
+TODO: we need to start services in a specific order
+  - resource-adaptor
+  - resource-cataloguer
+  - data-collector
+  - resource-viewer
+
 * Run the script:
   `./project start`
