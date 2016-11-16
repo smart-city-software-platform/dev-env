@@ -4,7 +4,7 @@
 * Init submodules:
   `git submodule init`
 * Update submodules:
-  `git submodule update`
+  `git submodule -q foreach git pull -q origin master`
 
 TODO: we need to start services in a specific order
   - resource-adaptor
