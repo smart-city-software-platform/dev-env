@@ -15,6 +15,31 @@ verify () {
   fi
 }
 
+
+if [ "$1" = "setup" ]; then
+  echo $sep
+  echo "Initializing submodules"
+  echo $(git submodule init)
+
+  echo $sep
+  echo "Pulling submodules from remote"
+  echo $(git submodule update --remote)
+    
+  echo $sep
+  for d in */; do
+    echo "Processing $d :"
+    cd $localPATH/$d
+    echo $sep
+    echo "Cleaning detached HEAD"
+    echo $(git -C $localPATH/$d checkout master)
+    echo "Building Docker images"
+    echo $(sh ./scripts/development setup)
+  done
+fi
+
+
+
+
 if [ "$1" = "pull" ]; then
   echo $sep
   for d in */; do
