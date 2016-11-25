@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/bin/bash
+echo '#!/bin/bash'
 echo 
 localPATH=`pwd`
 sep='---------------------------'
@@ -32,8 +33,8 @@ if [ "$1" = "setup" ]; then
     echo $sep
     echo "Cleaning detached HEAD"
     echo $(git -C $localPATH/$d checkout master)
-    echo "Building Docker images"
-    echo $(sh ./scripts/development setup)
+    # echo "Building Docker images"
+    # echo $(sh ./scripts/development setup)
   done
 fi
 
@@ -43,14 +44,12 @@ fi
 if [ "$1" = "pull" ]; then
   echo $sep
   for d in */; do
-    if [ "$d" != 'zPOO/' ]; then
-      if [ -n "$(git -C $localPATH/$d status --porcelain)" ]; then 
-        msg="You have uncomitted changes on $d"
-        echo "${RED}"
-        echo $msg
-        echo "${NC}"
-        echo
-      fi
+    if [ -n "$(git -C $localPATH/$d status --porcelain)" ]; then 
+      msg="You have uncomitted changes on $d"
+      echo "${RED}"
+      echo $msg
+      echo "${NC}"
+      echo
     fi
   done
 
@@ -63,40 +62,48 @@ if [ "$1" = "pull" ]; then
     echo "All repositories are clean"
     echo "$sep"
     for d in */; do
-      if [ "$d" != 'zPOO/' ]; then
         echo "Processing $d :"
         git -C $localPATH/$d checkout master
         echo "${CYAN}"
-        echo $(git -C $localPATH/$d pull origin master)
+        # echo $(git -C $localPATH/$d pull origin master)
         echo "${NC}"
-      fi
     done
   fi
 fi
 
-if [ "$1" = "start" ]; then
+if [ "$1" = "build" ]; then
   for d in */; do
-    if [ "$d" != 'zPOO/' ]; then
-      echo "$sep"
-      echo "Starting $d :"
-      cd $localPATH/$d
-      ./scripts/development stop > /dev/null
+    echo "$sep"
+    echo "Building $d :"
+    cd $localPATH/$d
+    sh scripts/setup > /dev/null
+    echo "${CYAN}"
+    echo "OK"
+    echo "${NC}"
+  done
+fi
+
+
+
+if [ "$1" = "start" ]; then
+  dirs=( resource-adaptor/ resource-cataloguer/ data-collector/ resource-viewer/ )
+  for dir in "${dirs[@]}"; do
+    echo "Starting ${dir}"
+    cd $localPATH/${dir}
       echo "${CYAN}"
-      echo $(./scripts/development start)
+      echo $(./scripts/development stop)
       echo "${NC}"
-    fi
+      echo $(./scripts/development start)
   done
 fi
 
 if [ "$1" = "stop" ]; then
   for d in */; do
-    if [ "$d" != 'zPOO/' ]; then
       echo "$sep"
       echo "Stopping $d :"
       cd $localPATH/$d
       echo "${CYAN}"
       echo $(./scripts/development stop)
       echo "${NC}"
-    fi
   done
 fi
