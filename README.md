@@ -14,3 +14,13 @@ TODO: we need to start services in a specific order
 
 * Run the script:
   `./project start`
+
+* Run tests:
+
+ - You need to install moreutils package using the command:
+
+    `$ apt-get install moreutils`
+
+ - To run all tests execute the command:
+
+    `./tests/run_all`
