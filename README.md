@@ -12,6 +12,15 @@ TODO: we need to start services in a specific order
   - data-collector
   - resource-viewer
 
+Configure docker compose to run without root permission:
+
+1- Add this line end of /etc/default/docker:
+   `DOCKER_OPTS="-H tcp://127.0.0.1:4243 -H unix:///var/run/docker.sock"`
+2- Add this line end of ~/.bashrc:
+  `export DOCKER_HOST=tcp://localhost:4243`
+3- Restart docker service:
+  `sudo service docker restart`
+
 * Run the script:
   `./project start`
 
