@@ -49,6 +49,20 @@ if [ "$1" = "pull" ]; then
   fi
 fi
 
+if [ "$1" = "setup" ]; then
+  for d in */; do
+    if [ "$d" != 'zPOO/' ]; then
+      echo "$sep"
+      echo "Starting $d :"
+      cd $localPATH/$d
+      ./scripts/setup > /dev/null
+      echo "${CYAN}"
+      echo $(./scripts/setup)
+      echo "${NC}"
+    fi
+  done
+fi
+
 if [ "$1" = "start" ]; then
   for d in */; do
     if [ "$d" != 'zPOO/' ]; then
