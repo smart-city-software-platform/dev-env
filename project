@@ -55,7 +55,6 @@ if [ "$1" = "setup" ]; then
       echo "$sep"
       echo "Starting $d :"
       cd $localPATH/$d
-      ./scripts/setup > /dev/null
       echo "${CYAN}"
       echo $(./scripts/setup)
       echo "${NC}"
