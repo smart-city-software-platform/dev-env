@@ -6,11 +6,7 @@
 * Update submodules:
   `git submodule update`
 
-TODO: we need to start services in a specific order
-  - resource-adaptor
-  - resource-cataloguer
-  - data-collector
-  - resource-viewer
-
-* Run the script:
+* Setup docker containers:
+  `./project setup`
+* Run containers:
   `./project start`
