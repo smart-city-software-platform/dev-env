@@ -13,3 +13,6 @@
 [submodule "external-resources"]
 	path = external-resources
 	url = git@gitlab.com:smart-city-software-platform/external-resources.git
+[submodule "resource-discoverer"]
+	path = resource-discoverer
+	url = git@gitlab.com:smart-city-software-platform/resource-discoverer.git
