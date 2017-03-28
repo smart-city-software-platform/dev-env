@@ -25,3 +25,12 @@ environment.
 
 * Run containers:
   `./project start`
+
+## Stop the Development Environment
+
+* Run containers:
+  `./project stop`
+
+
+> OBS: One should always stop all microservices to avoid name and bind conflicts
+in the future
