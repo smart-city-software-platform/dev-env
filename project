@@ -1,12 +1,12 @@
-#!/bin/sh
-echo 
+#!/bin/bash
 localPATH=`pwd`
-sep='---------------------------'
+sep="---------------------------"
 msg=""
 
 CYAN='\033[0;36m'
 NC='\033[0m'
 RED='\033[0;31m'
+projects=( "resource-adaptor" "resource-cataloguer" "data-collector" "resource-viewer" )
 
 verify () {
   if [ $? != 0 ]; then
@@ -17,9 +17,9 @@ verify () {
 
 if [ "$1" = "pull" ]; then
   echo $sep
-  for d in */; do
+  for d in "${projects[@]}"; do
     if [ "$d" != 'zPOO/' ]; then
-      if [ -n "$(git -C $localPATH/$d status --porcelain)" ]; then 
+      if [ -n "$(git -C $localPATH/$d status --porcelain)" ]; then
         msg="You have uncomitted changes on $d"
         printf "${RED}"
         echo $msg
@@ -37,7 +37,7 @@ if [ "$1" = "pull" ]; then
   else
     echo "All repositories are clean"
     echo "$sep"
-    for d in */; do
+    for d in "${projects[@]}"; do
       if [ "$d" != 'zPOO/' ]; then
         echo "Processing $d :"
         git -C $localPATH/$d checkout master
@@ -50,7 +50,7 @@ if [ "$1" = "pull" ]; then
 fi
 
 if [ "$1" = "setup" ]; then
-  for d in */; do
+  for d in "${projects[@]}"; do
     if [ "$d" != 'zPOO/' ]; then
       echo "$sep"
       echo "Starting $d :"
@@ -63,7 +63,7 @@ if [ "$1" = "setup" ]; then
 fi
 
 if [ "$1" = "start" ]; then
-  for d in */; do
+  for d in "${projects[@]}"; do
     if [ "$d" != 'zPOO/' ]; then
       echo "$sep"
       echo "Starting $d :"
@@ -77,7 +77,7 @@ if [ "$1" = "start" ]; then
 fi
 
 if [ "$1" = "stop" ]; then
-  for d in */; do
+  for d in "${projects[@]}"; do
     if [ "$d" != 'zPOO/' ]; then
       echo "$sep"
       echo "Stopping $d :"
