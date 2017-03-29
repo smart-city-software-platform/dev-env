@@ -1,18 +1,18 @@
 [submodule "data-collector"]
 	path = data-collector
-	url = git@gitlab.com:smart-city-software-platform/data-collector.git
+	url = git@gitlab.com:smartcities-labxp-2017/data-collector.git
 [submodule "resource-cataloguer"]
 	path = resource-cataloguer
-	url = git@gitlab.com:smart-city-software-platform/resource-cataloguer.git
+	url = git@gitlab.com:smartcities-labxp-2017/resource-cataloguer.git
 [submodule "resource-adaptor"]
 	path = resource-adaptor
-	url = git@gitlab.com:smart-city-software-platform/resource-adaptor.git
+	url = git@gitlab.com:smartcities-labxp-2017/resource-adaptor.git
 [submodule "resource-viewer"]
 	path = resource-viewer
-	url = git@gitlab.com:smart-city-software-platform/resource-viewer.git
+	url = git@gitlab.com:smartcities-labxp-2017/resource-viewer.git
 [submodule "external-resources"]
 	path = external-resources
-	url = git@gitlab.com:smart-city-software-platform/external-resources.git
+	url = git@gitlab.com:smartcities-labxp-2017/external-resources.git
 [submodule "resource-discoverer"]
 	path = resource-discoverer
-	url = git@gitlab.com:smart-city-software-platform/resource-discoverer.git
+	url = git@gitlab.com:smartcities-labxp-2017/resource-discoverer.git
