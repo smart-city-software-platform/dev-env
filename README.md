@@ -51,4 +51,4 @@ Configure docker compose to run without root permission:
 
 * To run all tests execute the command:
 
-    `./tests/run_all`
+    `./project test`

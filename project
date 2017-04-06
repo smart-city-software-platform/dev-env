@@ -88,3 +88,10 @@ if [ "$1" = "stop" ]; then
     fi
   done
 fi
+
+if [ "$1" = "test" ]; then
+  echo "Running all tests"
+  printf "${CYAN}"
+  ./tests/run_all
+  printf "${NC}"
+fi
