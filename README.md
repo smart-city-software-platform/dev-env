@@ -11,6 +11,15 @@ environment.
 * [Docker (>= 1.13)](https://www.docker.com/)
 * [Docker Compose (>= 1.10)](https://docs.docker.com/compose/)
 
+After install Docker and Docker Compose, add your user to docker group:
+
+1- Add this line end of /etc/default/docker:
+   `DOCKER_OPTS="-H tcp://127.0.0.1:4243 -H unix:///var/run/docker.sock"`
+2- Add this line end of ~/.bashrc:
+  `export DOCKER_HOST=tcp://localhost:4243`
+3- Restart docker service:
+  `sudo service docker restart`
+
 ## Setup
 
 * Clone the repository
@@ -23,7 +32,7 @@ environment.
 
 ## Run the Development Environment
 
-* Run containers:
+* Run the script:
   `./project start`
 
 ## Stop the Development Environment
@@ -31,6 +40,15 @@ environment.
 * Run containers:
   `./project stop`
 
-
 > OBS: One should always stop all microservices to avoid name and bind conflicts
-in the future
+Configure docker compose to run without root permission:
+
+## Run tests
+
+* You need to install shunit2 and moreutils package using the command:
+
+    `$ apt-get install moreutils shunit2`
+
+* To run all tests execute the command:
+
+    `./tests/run_all`

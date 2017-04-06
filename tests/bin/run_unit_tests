@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -e
+
+SERVICE=$1
+
+cd ../$SERVICE
+./scripts/development exec $SERVICE rspec
+cd -
