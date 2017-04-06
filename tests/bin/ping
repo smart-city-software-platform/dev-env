@@ -5,8 +5,10 @@ set -e
 ORIGIN_HOST=$1
 DESTINATION_HOST=$2
 
-../$ORIGIN_HOST/scripts/development exec $ORIGIN_HOST \
+cd ../$ORIGIN_HOST
+./scripts/development exec $ORIGIN_HOST \
 ping \
  -c 1 \
  -w 1 \
  $DESTINATION_HOST > /dev/null
+cd -

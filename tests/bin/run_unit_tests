@@ -4,4 +4,6 @@ set -e
 
 SERVICE=$1
 
-../$SERVICE/scripts/development exec $SERVICE rspec
+cd ../$SERVICE
+./scripts/development exec $SERVICE rspec
+cd -
