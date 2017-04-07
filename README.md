@@ -23,7 +23,7 @@ environment.
 
 ## Run the Development Environment
 
-* Run containers:
+* Run the script:
   `./project start`
 
 ## Stop the Development Environment
@@ -31,6 +31,15 @@ environment.
 * Run containers:
   `./project stop`
 
-
 > OBS: One should always stop all microservices to avoid name and bind conflicts
-in the future
+Configure docker compose to run without root permission:
+
+## Run tests
+
+* You need to install shunit2 and moreutils package using the command:
+
+    `$ apt-get install moreutils shunit2`
+
+* To run all tests execute the command:
+
+    `./project test`
