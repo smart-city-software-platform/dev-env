@@ -4,6 +4,6 @@ set -e
 
 SERVICE=$1
 
-cd ../$SERVICE
+cd $(cd $(dirname $SERVICE) && pwd -P)/$(basename $SERVICE)
 ./scripts/development exec $SERVICE rspec
 cd -
