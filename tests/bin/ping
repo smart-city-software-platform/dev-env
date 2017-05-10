@@ -5,7 +5,7 @@ set -e
 ORIGIN_HOST=$1
 DESTINATION_HOST=$2
 
-cd ../$ORIGIN_HOST
+cd $(cd $(dirname $ORIGIN_HOST) && pwd -P)/$(basename $ORIGIN_HOST)
 ./scripts/development exec $ORIGIN_HOST \
 ping \
  -c 1 \
