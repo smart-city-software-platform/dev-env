@@ -6,7 +6,7 @@ msg=""
 CYAN='\033[0;36m'
 NC='\033[0m'
 RED='\033[0;31m'
-projects=( "resource-adaptor" "resource-cataloguer" "data-collector" "resource-viewer" "resource-discoverer" "actuator-controller" )
+projects=( "kong-api-gateway" "resource-adaptor" "resource-cataloguer" "data-collector" "resource-viewer" "resource-discoverer" "actuator-controller" )
 
 verify () {
   if [ $? != 0 ]; then
