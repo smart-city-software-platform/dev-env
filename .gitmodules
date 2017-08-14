@@ -19,3 +19,6 @@
 [submodule "actuator-controller"]
 	path = actuator-controller
 	url = https://gitlab.com/smart-city-software-platform/actuator-controller.git
+[submodule "kong-api-gateway"]
+	path = kong-api-gateway
+	url = https://gitlab.com/smart-city-software-platform/kong-api-gateway.git
