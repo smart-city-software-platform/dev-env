@@ -3,7 +3,7 @@
 This repository is composed of the scripts required to run all InterSCity's
 microservices on the development environment. 
 This project was tested in a GNU Linux Debian 8 and 9
-environment.
+environments.
 
 ## Dependencies
 
@@ -26,13 +26,35 @@ environment.
 * Run the script:
   `./project start`
 
+After running the project, microservices will be available through
+[Kong](https://getkong.org/), which is an API Gateway tool that routes 
+HTTP requests to InterSCity's microservices based on the URL.
+Kong will be available on the following ports:
+* `8000` - HTTP API Gateway
+* `8443` - HTTPS API Gateway
+* `8001` - Kong Admin API
+* `8080` - Kong Dashboard
+
+One may use the Kong Dashboard to manage InterSCity's APIs. When required,
+you must inform Kong's url: `http://kong:8001`.
+
+The following URLs are used to access the microservices:
+* `\docs` - API documentation
+* `\adaptor` - Resource Adaptor
+* `\catalog` - Resource Catalog
+* `\collector` - Data Collector
+* `\actuator` - Actuator Controller
+* `\discovery` - Resource Discovery
+
+We still are not able to run the Resource Viewer behind Kong. It is necessary
+to change its links to use relative paths.
+
 ## Stop the Development Environment
 
 * Run containers:
   `./project stop`
 
 > OBS: One should always stop all microservices to avoid name and bind conflicts
-Configure docker compose to run without root permission:
 
 ## Run tests
 
