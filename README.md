@@ -34,7 +34,6 @@ Kong will be available on the following ports:
 * `8443` - HTTPS API Gateway
 * `8001` - Kong Admin API
 * `8080` - Kong Dashboard
-* `4200` - Resource Viewer Microservice
 * `8888` - InterSCity API documentation
 
 One may use the Kong Dashboard to manage InterSCity's APIs. When required,
@@ -47,8 +46,6 @@ The following URLs are used to access the microservices:
 * `\actuator` - Actuator Controller
 * `\discovery` - Resource Discovery
 
-We still are not able to run the Resource Viewer behind Kong. It is necessary
-to run it in a subdirectory so that its links and assets be properly served.
 
 ## Stop the Development Environment
 
