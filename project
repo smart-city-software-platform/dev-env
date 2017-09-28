@@ -53,11 +53,11 @@ if [ "$1" = "setup" ]; then
   for d in "${projects[@]}"; do
     if [ "$d" != 'zPOO/' ]; then
       echo "$sep"
-      echo "Starting $d :"
+      printf "Starting $d :"
       cd $localPATH/$d
-      echo "${CYAN}"
-      echo $(./scripts/setup)
-      echo "${NC}"
+      printf "${CYAN}"
+      ./scripts/setup
+      printf "${NC}"
     fi
   done
 fi
